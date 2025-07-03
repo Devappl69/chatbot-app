@@ -21,12 +21,12 @@ app.tkraise()
 app.focus_force()
 
 # Custom Fonts
-side_font = ("Arial",14)
-prompt_font = ("Arial",18)
-send_font = ("Arial",18,"bold")
-history_font = ("Arial",18,"underline")
-message_font = ("Arial",16)
-icon_font = ("Andale Mono",30)
+side_font = ctk.CTkFont("Arial",14)
+prompt_font = ctk.CTkFont("Arial",18)
+send_font = ctk.CTkFont("Arial",18,"bold")
+history_font = ctk.CTkFont("Arial",18,"bold", underline=True)
+message_font = ctk.CTkFont("Arial",16)
+icon_font = ctk.CTkFont("Andale Mono",30)
 
 # Window Setup
 app.state("zoomed")
@@ -149,7 +149,7 @@ visible_messages = []
 current_messages = [{"role": "system", "content": "You are a helpful assistant."}]
 buttons = []
 for i in range(50):
-    button = ChatButton(text=f"placeholder {i}...", row=i+1)
+    button = ChatButton(text=f"placeholder chat #{i}...", row=i+1)
     buttons.append(button)
 
 
