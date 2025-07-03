@@ -3,14 +3,12 @@ A Python application made with CustomTkinter that allows for chatting with chatb
 
 # Requirements
 ### Main
-- Python
-- Groq API Token
+- Python 3.11
+- Groq API Token *(get a free key here: https://console.groq.com/keys)*
 ### Libaries
-- CustomTkinter
-- Tkinter
-- Pillow
-- SQLite
-- Groq
+- CustomTkinter 5.2.2
+- Pillow 11.3.0
+- Groq 0.29.0
 
 # To-Do
 ### Main
