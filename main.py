@@ -5,6 +5,7 @@ from groq import Groq
 import json
 import time
 import ast
+import os
 
 groq_client = Groq()
 
@@ -25,6 +26,7 @@ prompt_font = ("Arial",18)
 send_font = ("Arial",18,"bold")
 history_font = ("Arial",18,"underline")
 message_font = ("Arial",16)
+icon_font = ("Andale Mono",30)
 
 # Window Setup
 app.state("zoomed")
@@ -119,13 +121,28 @@ prompt_button = ctk.CTkButton(master=input_frame, text="Send", font=send_font,wi
 prompt_button.grid(row=0, column=1, sticky="e", padx=(10,10))
 
 chat_frame.grid_columnconfigure(0, weight=1)
-
 input_spacer = ctk.CTkFrame(master=chat_frame, height=0, width=0)
 input_spacer.grid(row=999, column=0, pady=(200,0)) # Spacer to add space at the bottom to scroll further and reveal all messages
 
 history_label = ctk.CTkLabel(master=side_frame, text="Chat History", font=history_font)
 history_label.grid(row=0, column=0)
 
+top_frame.grid_rowconfigure(0, weight=1)
+top_frame.grid_columnconfigure(0, weight=1)
+top_frame.grid_columnconfigure(1, weight=1)
+top_frame.grid_columnconfigure(2, weight=1)
+top_frame.grid_columnconfigure(3, weight=1)
+top_frame.grid_columnconfigure(4, weight=1)
+sidebar_button = ctk.CTkButton(master=top_frame, text="↤", font=icon_font, anchor="n", width=50) #↤ / ↦
+sidebar_button.grid(row=0, column=0, sticky="w")
+options_button = ctk.CTkButton(master=top_frame, text="Chat Options")
+options_button.grid(row=0, column=1, sticky="e")
+name_entry = ctk.CTkEntry(master=top_frame, placeholder_text="PLACEHOLDER CHAT NAME", width=500, border_width=1)
+name_entry.grid(row=0, column=2, sticky="we", padx=5, pady=5)
+rename_button = ctk.CTkButton(master=top_frame, text="Rename")
+rename_button.grid(row=0, column=3, sticky="w")
+settings_button = ctk.CTkButton(master=top_frame, text="⚙", font=icon_font, anchor="n", width=50)
+settings_button.grid(row=0, column=4, sticky="e")
 
 # Demo Widgets
 visible_messages = []
@@ -136,6 +153,6 @@ for i in range(50):
     buttons.append(button)
 
 
-chat_frame._parent_canvas.yview_scroll(1000, "units") # Autoscroll to bottom (doesn't work with the spacer)
+chat_frame._parent_canvas.yview_moveto(1.0) # Autoscroll to bottom (doesn't work with the spacer)
 
 app.mainloop()
