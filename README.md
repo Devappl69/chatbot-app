@@ -11,6 +11,7 @@ A Python application made with CustomTkinter that allows for chatting with chatb
 - Groq 0.29.0
 ### Other
 - Assets to replace the placeholder ones
+- Set the **GROQ_API_KEY** environmental variable
 
 # To-Do
 ### Main
