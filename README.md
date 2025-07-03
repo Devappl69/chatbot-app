@@ -18,7 +18,7 @@ A Python application made with CustomTkinter that allows for chatting with chatb
 - PyInstaller
 ### Limitations
 - You need to run the installer on the architecture on which you want the application to run. *(MacOS is an exception: https://pyinstaller.org/en/stable/usage.html#cmdoption-target-architecture)*
-- API keys need to be defined in the source code *(e.g.:* <code>client = Groq(api_key="gsk_..."</code>*)* **[temporary until full release]**
+- API keys need to be defined in the source code *(e.g.:* <code>groq_client = Groq(api_key="gsk_..."</code>*)* **[temporary until full release]**
 - Icons and window names aren't fully supported. (just comment those lines out) **[temporary until full release]**
 ### Instructions
 1. Modify the code as needed to deal with the aforementioned limitations.
