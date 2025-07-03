@@ -9,6 +9,8 @@ A Python application made with CustomTkinter that allows for chatting with chatb
 - CustomTkinter 5.2.2
 - Pillow 11.3.0
 - Groq 0.29.0
+### Other
+- Assets to replace the placeholder ones
 
 # To-Do
 ### Main
@@ -24,3 +26,4 @@ A Python application made with CustomTkinter that allows for chatting with chatb
 -   add chat regeneration button on bot message, and repurpose the button to be used for chat editing on the user message
 ### Ideas
 -   add default system prompts from here: https://github.com/guy915/LLM-System-Prompts
+-   build from source into an executable
